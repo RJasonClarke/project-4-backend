@@ -14,6 +14,12 @@ class ListsController < ApplicationController
         end
     end
 
+    def destroy
+        list = List.find_by_id(params[:id])
+        list.destroy
+        render json: {message: "#{list.title} has been deleted."}
+    end
+
     private
 
     def list_params
