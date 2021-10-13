@@ -18,15 +18,6 @@ class GamesController < ApplicationController
         end
     end
 
-    def update
-        game = Game.find_by_id(params[:id])
-        if game.update(game_params)
-            render json: game
-        else
-            render json: {error: "Error"}
-        end
-    end
-
     def destroy
         game = Game.find_by_id(params[:id])
         game.destroy
@@ -36,6 +27,6 @@ class GamesController < ApplicationController
     private
 
     def game_params
-        params.require(:game).permit(:title, :description, :img, :list_id)
+        params.require(:game).permit(:title, :description, :img, :score, :list_id)
     end
 end

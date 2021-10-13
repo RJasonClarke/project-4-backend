@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_09_24_161304) do
     t.string "title"
     t.string "description"
     t.string "img"
+    t.integer "score"
     t.integer "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
